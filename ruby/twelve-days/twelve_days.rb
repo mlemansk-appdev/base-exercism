@@ -25,17 +25,30 @@ class TwelveDays
     gift[10] = " eleven Pipers Piping,"
     gift[11] = " twelve Drummers Drumming,"
     gift_list = ""
+    text = ""
+    lyrics = ""
     #gift.each_with_index { |el, i| puts "On the #{days_text[i]} day of Christmas my true love gave to me: #{gift[i]}" }
 
     for i in 0..gift.length - 1
         
         gift_list = gift_list.prepend(gift[i])
-        puts "On the #{days_text[i]} day of Christmas my true love gave to me:#{gift_list}"
+        text = "On the #{days_text[i]} day of Christmas my true love gave to me:#{gift_list}"
 
         if i == 0
-        gift_list = gift_list.prepend(" and")
+            gift_list = gift_list.prepend(" and")
         end
+
+        
+        if i <= 10
+            text += "\n\n"
+        end
+
+        lyrics += text
+
     end
   
-  end
+    puts lyrics
+    return lyrics
+  
+    end
 end
